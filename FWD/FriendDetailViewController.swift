@@ -56,7 +56,6 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return the number of rows that should be instantiated
         return friendSummary.count
@@ -107,7 +106,6 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
             tableView.reloadData()
         }
     }
-    
     //Reloads the table everytime the view apears
     
     override func viewDidAppear(_ animated: Bool) {

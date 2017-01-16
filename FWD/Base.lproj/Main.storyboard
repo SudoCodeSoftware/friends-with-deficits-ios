@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -58,7 +58,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilb-xm-vUu">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilb-xm-vUu">
+                                                    <frame key="frameInset" minX="309" minY="20" width="42" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -71,15 +72,15 @@
                                             </subviews>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="Ilb-xm-vUu" firstAttribute="leading" secondItem="c8V-tO-Qg1" secondAttribute="trailing" constant="190.5" id="AW2-iS-Nbx"/>
-                                                <constraint firstItem="hg7-vl-SNR" firstAttribute="leading" secondItem="h8D-qz-ZAJ" secondAttribute="leadingMargin" constant="123" id="LYP-nV-pjq"/>
+                                                <constraint firstItem="Ilb-xm-vUu" firstAttribute="leading" secondItem="c8V-tO-Qg1" secondAttribute="trailing" constant="158" id="AW2-iS-Nbx"/>
+                                                <constraint firstItem="hg7-vl-SNR" firstAttribute="leading" secondItem="h8D-qz-ZAJ" secondAttribute="leadingMargin" constant="191" id="LYP-nV-pjq"/>
                                                 <constraint firstItem="H55-pr-AqN" firstAttribute="top" secondItem="h8D-qz-ZAJ" secondAttribute="topMargin" constant="17" id="R00-Lh-dcR"/>
-                                                <constraint firstItem="c8V-tO-Qg1" firstAttribute="centerY" secondItem="h8D-qz-ZAJ" secondAttribute="centerY" id="Srk-2k-wey"/>
+                                                <constraint firstItem="c8V-tO-Qg1" firstAttribute="centerY" secondItem="h8D-qz-ZAJ" secondAttribute="centerY" constant="-3" id="Srk-2k-wey"/>
                                                 <constraint firstItem="H55-pr-AqN" firstAttribute="centerY" secondItem="hg7-vl-SNR" secondAttribute="centerY" constant="-0.5" id="W3C-wx-qWA"/>
-                                                <constraint firstItem="H55-pr-AqN" firstAttribute="leading" secondItem="c8V-tO-Qg1" secondAttribute="trailing" constant="-1.5" id="bHe-oy-yIu"/>
+                                                <constraint firstItem="H55-pr-AqN" firstAttribute="leading" secondItem="c8V-tO-Qg1" secondAttribute="trailing" constant="-74" id="bHe-oy-yIu"/>
                                                 <constraint firstItem="hg7-vl-SNR" firstAttribute="top" secondItem="h8D-qz-ZAJ" secondAttribute="topMargin" constant="23" id="cQc-At-ejP"/>
                                                 <constraint firstAttribute="trailing" secondItem="H55-pr-AqN" secondAttribute="trailing" constant="252" id="cfh-Et-B8m"/>
-                                                <constraint firstItem="Ilb-xm-vUu" firstAttribute="centerY" secondItem="h8D-qz-ZAJ" secondAttribute="centerY" constant="1" id="l7Z-eg-adw"/>
+                                                <constraint firstItem="Ilb-xm-vUu" firstAttribute="centerY" secondItem="h8D-qz-ZAJ" secondAttribute="centerY" id="l7Z-eg-adw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="friendCell">
@@ -138,7 +139,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="360" y="399"/>
+            <point key="canvasLocation" x="359.19999999999999" y="398.95052473763121"/>
         </scene>
         <!--AddFriend View Controller Scene-->
         <scene sceneID="WIR-x1-Mwb">
@@ -375,7 +376,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3I-o9-u1P">
-                                <frame key="frameInset" minX="250" minY="455" width="101" height="30"/>
+                                <frame key="frameInset" minX="247" minY="558" width="101" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="101" id="PRG-2A-TU5"/>
@@ -412,7 +413,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JsX-kW-NFU">
-                                <frame key="frameInset" minX="185" minY="331" width="231" height="30"/>
+                                <frame key="frameInset" minX="185" minY="499" width="231" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="231" id="3Ce-Sq-Yf8"/>
                                 </constraints>
@@ -460,12 +461,19 @@
                                     <action selector="additem:" destination="gjl-Lt-0Dv" eventType="editingDidEnd" id="evo-2x-sjv"/>
                                 </connections>
                             </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="thW-Cr-VOg">
+                                <frame key="frameInset" minY="262" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="506083264.15458101">
+                                    <!--2017-01-14 10:41:04 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" red="0.50980392159999999" green="0.30196078430000001" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4VS-Jl-9OR" firstAttribute="trailing" secondItem="HJ7-Y5-1ca" secondAttribute="trailing" id="0Sk-GG-hJf"/>
                             <constraint firstItem="XIa-wP-hmv" firstAttribute="centerX" secondItem="Dlh-zP-VaV" secondAttribute="centerX" constant="3" id="5fe-KY-GTV"/>
-                            <constraint firstItem="JsX-kW-NFU" firstAttribute="top" secondItem="L2q-dQ-BBh" secondAttribute="bottom" constant="77" id="DaO-V5-tEy"/>
+                            <constraint firstItem="JsX-kW-NFU" firstAttribute="top" secondItem="L2q-dQ-BBh" secondAttribute="bottom" constant="245" id="DaO-V5-tEy"/>
                             <constraint firstItem="hwu-gf-E6w" firstAttribute="centerY" secondItem="Dlh-zP-VaV" secondAttribute="centerY" id="EZC-Ev-3Bq"/>
                             <constraint firstItem="hwu-gf-E6w" firstAttribute="bottom" secondItem="HuC-n9-Ndf" secondAttribute="bottom" id="Ehq-hh-f36"/>
                             <constraint firstItem="L2q-dQ-BBh" firstAttribute="top" secondItem="XIa-wP-hmv" secondAttribute="bottom" constant="86" id="HCT-52-W68"/>
@@ -474,7 +482,7 @@
                             <constraint firstItem="3Tl-kP-g2n" firstAttribute="centerY" secondItem="HJ7-Y5-1ca" secondAttribute="centerY" constant="7.5" id="K4w-Jh-HF5"/>
                             <constraint firstItem="hwu-gf-E6w" firstAttribute="centerX" secondItem="L2q-dQ-BBh" secondAttribute="centerX" constant="2.5" id="LG8-3c-S66"/>
                             <constraint firstItem="XIa-wP-hmv" firstAttribute="centerX" secondItem="JsX-kW-NFU" secondAttribute="centerX" constant="2.5" id="MoE-HY-cpb"/>
-                            <constraint firstItem="I3I-o9-u1P" firstAttribute="top" secondItem="JsX-kW-NFU" secondAttribute="bottom" constant="94" id="NF2-11-Ixt"/>
+                            <constraint firstItem="I3I-o9-u1P" firstAttribute="top" secondItem="JsX-kW-NFU" secondAttribute="bottom" constant="29" id="NF2-11-Ixt"/>
                             <constraint firstItem="3Tl-kP-g2n" firstAttribute="top" secondItem="L2q-dQ-BBh" secondAttribute="bottom" constant="-85" id="OlG-G4-WyI"/>
                             <constraint firstItem="hwu-gf-E6w" firstAttribute="leading" secondItem="XIa-wP-hmv" secondAttribute="leading" id="R0V-kG-XdR"/>
                             <constraint firstItem="3Tl-kP-g2n" firstAttribute="centerX" secondItem="L2q-dQ-BBh" secondAttribute="centerX" constant="2" id="SPF-lE-gCa"/>
@@ -493,6 +501,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="DateTime" destination="thW-Cr-VOg" id="AjU-T3-Od4"/>
                         <outlet property="Description" destination="JsX-kW-NFU" id="h5k-W5-KgC"/>
                         <outlet property="NegorPos" destination="3Tl-kP-g2n" id="fBc-D5-0fK"/>
                         <outlet property="debtText" destination="L2q-dQ-BBh" id="tEt-k2-Dfh"/>
@@ -515,8 +524,8 @@
         <image name="Banner.png" width="254" height="78"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Z6P-KB-zBT"/>
-        <segue reference="F6w-3C-udw"/>
+        <segue reference="2dT-YY-PRI"/>
         <segue reference="0hY-9Z-W2l"/>
+        <segue reference="F6w-3C-udw"/>
     </inferredMetricsTieBreakers>
 </document>
