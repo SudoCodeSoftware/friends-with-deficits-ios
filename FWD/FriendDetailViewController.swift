@@ -118,16 +118,17 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if indexPath.row == selectedRowIndex && thereIsCellTapped {
+            debugPrint(friendSummary[indexPath.row])
             return 140
+            
         }
         
-        return 44
+        return 70
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath as IndexPath)?.backgroundColor = UIColor.gray
+        tableView.cellForRow(at: indexPath as IndexPath)?.backgroundColor = UIColor.white
         
-        // avoid paint the cell is the index is outside the bounds
         if selectedRowIndex != -1 {
             tableView.cellForRow(at: (IndexPath(row: self.selectedRowIndex, section: 0)))?.backgroundColor = UIColor.white
         }
@@ -137,7 +138,6 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
             selectedRowIndex = indexPath.row
         }
         else {
-            // there is no cell selected anymore
             thereIsCellTapped = false
             selectedRowIndex = -1
         }
@@ -146,7 +146,7 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
         tableView.endUpdates()
     }
     
-
 }
+
 
 
