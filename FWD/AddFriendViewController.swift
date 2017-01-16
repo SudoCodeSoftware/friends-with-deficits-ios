@@ -14,7 +14,7 @@ class AddFriendViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func additem(_ sender: AnyObject){
         if newFriendName.text != ""{
-            let currFriend = [newFriendName.text!, "$0;nil"]
+            let currFriend = [newFriendName.text!.lowercased(), "$0"]
             friendsList.append(currFriend)
             newFriendName.text = ""
             UserDefaults.standard.set(friendsList, forKey: "Friends_With_Defecits_List")

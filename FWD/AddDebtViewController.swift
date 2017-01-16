@@ -27,10 +27,16 @@ class AddDebtViewController: UIViewController {
     
     @IBOutlet weak var Description: UITextField!
     
+    @IBOutlet weak var DateTime: UIDatePicker!
+    
     
     
     @IBAction func additem(_ sender: AnyObject){
         if debtText.text != "" && Description.text != ""{
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+            let Date = dateFormatter.string(from: DateTime.date)
             var summary:String = ""
             summary = debtText.text!
             summary += ";" as String!
@@ -38,15 +44,8 @@ class AddDebtViewController: UIViewController {
             summary += ";" as String!
             summary += Description.text!
             summary += ";" as String!
-            let first = Float(friendsList[friendIndex][1].components(separatedBy: "$")[1].components(separatedBy: ";")[0])
-            let second = Float(debtText.text!)
-            var result = 0
-            if NegorPos.isOn {
-                result = Int(Float(first! + second!))
-            } else {
-                result = Int(Float(first! - second!))
-            }
-            friendsList[friendIndex][1] = ("$"+String(result))
+            summary += Date
+            summary += ";" as String!
             if editIndex != -1 {
                 friendsList[friendIndex][editIndex + 2] = summary
                 
@@ -88,6 +87,12 @@ class AddDebtViewController: UIViewController {
         if editIndex != -1 {
             debtText.text = friendsList[friendIndex][editIndex + 2].components(separatedBy: ";")[0]
             Description.text = friendsList[friendIndex][editIndex + 2].components(separatedBy: ";")[2]
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            
+            let debtDate = dateFormatter.date(from: friendsList[friendIndex][editIndex + 2].components(separatedBy: ";")[3])
+            
+            DateTime.date = debtDate!
             debugPrint(editIndex)
             if friendsList[friendIndex][editIndex + 2].components(separatedBy: ";")[1] == "true" {
                 NegorPos.setOn(true, animated: true)

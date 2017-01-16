@@ -46,22 +46,25 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             debugPrint(friendsList)
         }
 
-        
         for i in (0..<friendsList.count) {
             var curr:Float
-            curr = 0.0
+            curr = 0
             
             for j in (2..<friendsList[i].count) {
                 if friendsList[i][j].components(separatedBy: ";")[1] == "true"{
                     curr += Float(friendsList[i][j].components(separatedBy: ";")[0])!
-                    friendsList[i][1] = "$" + String(curr)
                     
                 } else {
-                    curr += Float(friendsList[i][j].components(separatedBy: ";")[0])!
-                    friendsList[i][1] = "-$" + String(curr)
+                    curr -= Float(friendsList[i][j].components(separatedBy: ";")[0])!
                 }
-                
             }
+            if curr >= 0 {
+                friendsList[i][1] = "$" + String(curr)
+            } else if curr < 0 {
+                friendsList[i][1] = "-$" + String(-1*curr)
+            }
+            
+        
         }
         
         self.tableView.delegate = self
@@ -99,9 +102,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return friendsList.count
     }
     
-    let customGreen = UIColor(red: 89/255, green: 205/255, blue: 144/255, alpha: 1)
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let customGreen = UIColor(red: 89/255, green: 205/255, blue: 144/255, alpha: 1)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! MainPrototypeCell
         
@@ -117,20 +121,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
         
-        
-        
-        if friendsList[(indexPath as NSIndexPath).row][2].components(separatedBy: ";")[1] == "true" {
-            
-            cell.debtLabel.textColor = customGreen
-            
-        } else {
-            
+        let netValue = friendsList[(indexPath as NSIndexPath).row][1]
+        if netValue == "$0" || netValue == "$0.0" {
+            cell.debtLabel.textColor = UIColor.black
+        } else if  netValue[0] == "-" {
             cell.debtLabel.textColor = UIColor.red // new red: #d65c5c
             
+        } else {
+            cell.debtLabel.textColor = customGreen
+        
+            
         }
- 
-
-        return cell
+    return cell
  
     }
  
@@ -157,4 +159,32 @@ extension MainViewController: UISearchResultsUpdating {
         filterContentForSearchText(searchController.searchBar.text!)
     }
 }
+extension String {
+    
+    var length: Int {
+        return self.characters.count
+    }
+    
+    subscript (i: Int) -> String {
+        return self[Range(i ..< i + 1)]
+    }
+    
+    func substring(from: Int) -> String {
+        return self[Range(min(from, length) ..< length)]
+    }
+    
+    func substring(to: Int) -> String {
+        return self[Range(0 ..< max(0, to))]
+    }
+    
+    subscript (r: Range<Int>) -> String {
+        let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
+                                            upper: min(length, max(0, r.upperBound))))
+        let start = index(startIndex, offsetBy: range.lowerBound)
+        let end = index(start, offsetBy: range.upperBound - range.lowerBound)
+        return self[Range(start ..< end)]
+    }
+    
+}
+
 
