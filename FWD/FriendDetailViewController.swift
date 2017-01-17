@@ -106,8 +106,6 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
             tableView.reloadData()
         }
     }
-    //Reloads the table everytime the view apears
-    
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
     }
@@ -119,6 +117,8 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
         
         if indexPath.row == selectedRowIndex && thereIsCellTapped {
             debugPrint(friendSummary[indexPath.row])
+
+    
             return 140
             
         }
@@ -145,6 +145,8 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
         tableView.beginUpdates()
         tableView.endUpdates()
     }
+    
+    
     
 }
 
