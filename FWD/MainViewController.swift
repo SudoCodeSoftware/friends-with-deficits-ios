@@ -18,6 +18,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var totalLabel: UIToolbar!
+    
     
     //Initialises the search button/controller/bar
     let searchController = UISearchController(searchResultsController: nil)
@@ -35,6 +37,24 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Stuff For the Footer
+        let tableViewFooter = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        tableViewFooter.layer.cornerRadius = 8.0
+        tableViewFooter.clipsToBounds = true
+        tableViewFooter.backgroundColor = UIColor.purple
+        let totalCredit = UILabel(frame: CGRect(x: tableView.frame.width/14 , y: 0, width: tableView.frame.width*(2/3), height: 50))
+        let totalDebt = UILabel(frame: CGRect(x: tableView.frame.width/5 , y: 0, width: tableView.frame.width*(1/3), height: 50))
+        totalDebt.font = UIFont(name: "YEEZYTSTAR-Bold", size: 30)
+        totalDebt.textColor = UIColor.white
+        totalDebt.backgroundColor = UIColor.black
+        tableViewFooter.addSubview(totalDebt)
+        totalCredit.font = UIFont(name: "YEEZYTSTAR-Bold", size: 30)
+        totalCredit.textColor = UIColor.white
+        tableViewFooter.addSubview(totalCredit)
+        
+        tableView.tableFooterView  = tableViewFooter
+
+        
         let shareData = ShareData.sharedInstance
         shareData.friendIndex = -1
         shareData.editIndex = -1
@@ -45,7 +65,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             friendsList = UserDefaults.standard.object(forKey: "Friends_With_Defecits_List") as! [[String]]
             debugPrint(friendsList)
         }
-
+        var totalDebtFloat: Float = 0
+        var totalCreditFloat: Float = 0
         for i in (0..<friendsList.count) {
             var curr:Float
             curr = 0
@@ -53,19 +74,34 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             for j in (2..<friendsList[i].count) {
                 if friendsList[i][j].components(separatedBy: ";")[1] == "true"{
                     curr += Float(friendsList[i][j].components(separatedBy: ";")[0])!
-                    
                 } else {
                     curr -= Float(friendsList[i][j].components(separatedBy: ";")[0])!
                 }
             }
             if curr >= 0 {
                 friendsList[i][1] = "$" + String(curr)
+                totalCreditFloat += curr
+                
             } else if curr < 0 {
                 friendsList[i][1] = "-$" + String(-1*curr)
+                totalDebtFloat -= curr
             }
-            
         
         }
+        
+        totalCredit.text = "$" + String(totalCreditFloat)
+        totalDebt.text = "     -$" + String(totalDebtFloat)
+        /*
+        if totalDebtFloat >= 0 {
+            let customGreen = UIColor(red: 89/255, green: 205/255, blue: 144/255, alpha: 1)
+            totalDebt.textColor = customGreen
+            totalDebt.text = "$" + String(totalDebtFloat)
+        } else if totalDebtFloat < 0 {
+            totalDebt.text = "-$" + String(-1*totalDebtFloat)
+            totalDebt.textColor = UIColor.red
+        }
+        */
+        
         
         self.tableView.delegate = self
         
@@ -92,7 +128,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
+    
     //Stuff For Main Friend Table
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return the number of rows that should be instantiated
@@ -135,13 +173,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     return cell
  
     }
- 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    
+    
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == UITableViewCellEditingStyle.delete {
             friendsList.remove(at: (indexPath as NSIndexPath).row)
             UserDefaults.standard.set(friendsList, forKey: "Friends_With_Defecits_List")
             tableView.reloadData()
+            viewDidLoad()
             
         }
     }

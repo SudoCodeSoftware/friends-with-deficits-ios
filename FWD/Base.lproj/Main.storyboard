@@ -34,10 +34,10 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ROz-FN-CAf">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.30196078430000001" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="friendCell" rowHeight="82" id="OFd-qc-N5r" customClass="MainPrototypeCell" customModule="FWD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="top" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="friendCell" rowHeight="82" id="OFd-qc-N5r" customClass="MainPrototypeCell" customModule="FWD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="82"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OFd-qc-N5r" id="h8D-qz-ZAJ">
@@ -115,7 +115,7 @@
                         <color key="backgroundColor" red="0.50980392156862742" green="0.30196078431372547" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hZB-PS-zlt" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-8" id="1ll-FD-wDt"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ROz-FN-CAf" secondAttribute="bottom" id="NVh-7b-aQn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ROz-FN-CAf" secondAttribute="bottom" constant="80" id="NVh-7b-aQn"/>
                             <constraint firstAttribute="trailing" secondItem="ROz-FN-CAf" secondAttribute="trailing" id="Q0c-by-6AP"/>
                             <constraint firstItem="VbV-Bw-msP" firstAttribute="centerX" secondItem="ROz-FN-CAf" secondAttribute="centerX" id="Qff-df-oE1"/>
                             <constraint firstItem="ROz-FN-CAf" firstAttribute="top" secondItem="VbV-Bw-msP" secondAttribute="bottom" constant="5" id="Ref-Kp-kTt"/>
@@ -139,7 +139,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="359.19999999999999" y="398.95052473763121"/>
+            <point key="canvasLocation" x="357.60000000000002" y="398.05097451274366"/>
         </scene>
         <!--AddFriend View Controller Scene-->
         <scene sceneID="WIR-x1-Mwb">
@@ -456,6 +456,7 @@
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="thW-Cr-VOg">
                                 <frame key="frameInset" minY="334" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <date key="date" timeIntervalSinceReferenceDate="506083264.15458101">
                                     <!--2017-01-14 10:41:04 +0000-->
                                 </date>
@@ -525,7 +526,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="TMM-cZ-zxx"/>
-        <segue reference="2dT-YY-PRI"/>
+        <segue reference="Z6P-KB-zBT"/>
         <segue reference="0hY-9Z-W2l"/>
     </inferredMetricsTieBreakers>
 </document>
