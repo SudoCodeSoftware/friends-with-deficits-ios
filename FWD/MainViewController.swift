@@ -47,9 +47,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         
-        let totalCredit = UILabel(frame: CGRect(x: tableView.frame.width/14 , y: 10, width: tableView.frame.width*(2/3), height: 50))
+        let totalCredit = UILabel(frame: CGRect(x: tableView.frame.width/30 , y: 10, width: tableView.frame.width*(1/2), height: 50))
         totalCredit.font = UIFont(name: "YEEZYTSTAR-Bold", size: 30)
         totalCredit.textColor = UIColor.white
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
         tableViewFooter.addSubview(totalCredit)
         
         
@@ -63,7 +65,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         
-        let totalDebt = UILabel(frame: CGRect(x: tableView.frame.width/5 , y: 10, width: tableView.frame.width*(1/3), height: 50))
+        let totalDebt = UILabel(frame: CGRect(x: tableView.frame.width/7 , y: 10, width: tableView.frame.width*(1/2), height: 50))
         totalDebt.font = UIFont(name: "YEEZYTSTAR-Bold", size: 30)
         totalDebt.textColor = UIColor.white
         totalDebt.backgroundColor = UIColor.black
@@ -135,10 +137,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         totalCredit.text = "$" + String(totalCreditFloat)
-        totalDebt.text = "     -$" + String(totalDebtFloat)
+        totalDebt.text = "    -$" + String(totalDebtFloat)
         
         var netStandingFloat: Float = 0
-        netStandingFloat = totalCreditFloat + totalDebtFloat
+        netStandingFloat = totalCreditFloat - totalDebtFloat
         
         if netStandingFloat >= 0 {
             netStanding.text = "$" + String(netStandingFloat)
@@ -194,7 +196,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.contentView.backgroundColor = UIColor(red:0.5, green:0.00, blue:0.5, alpha:1.0)
         
-        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 120))
+        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 70))
         
         whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
         whiteRoundedView.layer.masksToBounds = false

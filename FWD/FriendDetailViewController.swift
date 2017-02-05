@@ -23,6 +23,8 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var friendName: UILabel!
     
     
+    
+    
     @IBAction func Edit(_ sender: AnyObject) {
         let shareData = ShareData.sharedInstance
         shareData.editIndex = sender.tag;
@@ -42,14 +44,14 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
         
         
         
-        let totalCredit = UILabel(frame: CGRect(x: tableView.frame.width/14 , y: 10, width: tableView.frame.width*(2/3), height: 50))
+        let totalCredit = UILabel(frame: CGRect(x: tableView.frame.width/30 , y: 10, width: tableView.frame.width*(2/3), height: 50))
         totalCredit.font = UIFont(name: "YEEZYTSTAR-Bold", size: 30)
         totalCredit.textColor = UIColor.white
         tableViewFooter.addSubview(totalCredit)
         
         
         
-        let totalCreditDescription = UILabel(frame: CGRect(x: 0 , y: 0, width: tableView.frame.width*(2/3), height: 20))
+        let totalCreditDescription = UILabel(frame: CGRect(x: 0 , y: 0, width: tableView.frame.width*(1/2), height: 20))
         totalCreditDescription.text = "Total Credits"
         totalCreditDescription.textColor = UIColor.white
         totalCreditDescription.textAlignment = .left
@@ -58,7 +60,7 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
         
         
         
-        let totalDebt = UILabel(frame: CGRect(x: tableView.frame.width/5 , y: 10, width: tableView.frame.width*(1/3), height: 50))
+        let totalDebt = UILabel(frame: CGRect(x: tableView.frame.width/7 , y: 10, width: tableView.frame.width*(1/2), height: 50))
         totalDebt.font = UIFont(name: "YEEZYTSTAR-Bold", size: 30)
         totalDebt.textColor = UIColor.white
         totalDebt.backgroundColor = UIColor.black
@@ -82,6 +84,7 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
         netStanding.center.x = self.view.center.x
         netStanding.textAlignment = .center
         tableViewFooter.addSubview(netStanding)
+        
         
         let netStandingDescription = UILabel(frame: CGRect(x: 0 , y: 60, width: tableView.frame.width/10, height: 20))
         netStandingDescription.text = "Net Standing"
@@ -108,11 +111,42 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
         shareData.editIndex = -1
         
         debugPrint(friendIndex)
-        
+        var totalCreditFloat:Float = 0
+        var totalDebtFloat:Float = 0
         friendName.text = friendsList[friendIndex][0]
         for i in 0..<(friendsList[friendIndex].count - 2) {
             friendSummary.append(friendsList[friendIndex][i+2])
+            let curr = friendsList[friendIndex][i+2].components(separatedBy: ";")
+            debugPrint(curr[0])
+            debugPrint(curr[1])
+            
+            
+            if String(curr[1]) == "true" {
+                debugPrint(curr[0])
+                totalCreditFloat += Float(curr[0])!
+                
+            } else if String(curr[1]) == "false" {
+                debugPrint(curr[0])
+                totalDebtFloat += Float(curr[0])!
+                
+            }
+            
         }
+        
+        totalCredit.text = "$" + String(totalCreditFloat)
+        totalDebt.text = "     -$" + String(totalDebtFloat)
+        
+        var netStandingFloat: Float = 0
+        netStandingFloat = totalCreditFloat - totalDebtFloat
+        
+        if netStandingFloat >= 0 {
+            netStanding.text = "$" + String(netStandingFloat)
+            
+        } else if netStandingFloat < 0 {
+            netStanding.text = "-$" + String(-1*netStandingFloat)
+        }
+        
+        
         self.tableView.delegate = self
     }
     
@@ -126,14 +160,12 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var totalDebtFloat: Float = 0
-        var totalCreditFloat: Float = 0
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryCell") as! DetailPrototypeCell
         
         cell.contentView.backgroundColor = UIColor(red:0.5, green:0.00, blue:0.5, alpha:1.0)
         
-        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 120))
+        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 60))
         
         whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
         whiteRoundedView.layer.masksToBounds = false
@@ -195,7 +227,6 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
         
         if indexPath.row == selectedRowIndex && thereIsCellTapped {
             debugPrint(friendSummary[indexPath.row])
-
     
             return 140
             
