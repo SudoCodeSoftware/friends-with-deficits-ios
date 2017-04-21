@@ -17,6 +17,7 @@ class AddDebtViewController: UIViewController {
     
     var friendIndex:Int!
     var editIndex:Int!
+    var calcSave:String!
     
     
     @IBOutlet weak var friendName: UILabel!
@@ -81,6 +82,13 @@ class AddDebtViewController: UIViewController {
         let shareData = ShareData.sharedInstance
         friendIndex = shareData.friendIndex
         editIndex = shareData.editIndex
+        calcSave = shareData.calcSave
+        if (calcSave != nil) {
+            debugPrint("calcSave:")
+            debugPrint(calcSave)
+        }
+        debtText.text = calcSave
+        shareData.calcSave = ""
         
         friendName.text = friendsList[friendIndex][0]
        
@@ -113,6 +121,15 @@ class AddDebtViewController: UIViewController {
         
         return true
     }
-
+    
+    @IBAction func showPopup(_ sender: AnyObject) {
+        
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! PopUpViewController
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
+        
+    }
 
 }

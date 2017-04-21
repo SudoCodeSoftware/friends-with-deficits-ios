@@ -163,7 +163,7 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SummaryCell") as! DetailPrototypeCell
         
-        cell.contentView.backgroundColor = UIColor(red:0.5, green:0.00, blue:0.5, alpha:1.0)
+        cell.contentView.backgroundColor = UIColor(red:0.51, green:0.30, blue:0.62, alpha:1.0)
         
         let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 60))
         
@@ -227,12 +227,11 @@ class FriendDetailViewController: UIViewController, UITableViewDelegate, UITable
         
         if indexPath.row == selectedRowIndex && thereIsCellTapped {
             debugPrint(friendSummary[indexPath.row])
-    
-            return 140
+            //return 140
             
         }
         
-        return 70
+    return 70
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

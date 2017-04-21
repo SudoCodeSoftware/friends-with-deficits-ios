@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Alamofire
+
 
 var friendsList = [[String]]()
 var filteredFriends = [String]()
+
 
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -18,13 +21,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var totalLabel: UIToolbar!
-    
     
     //Initialises the search button/controller/bar
     let searchController = UISearchController(searchResultsController: nil)
     
-    @IBOutlet weak var friendSearch: UIBarButtonItem!
+    //@IBOutlet weak var friendSearch: UIBarButtonItem!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "ToFriendDetail") {
@@ -38,7 +39,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         
         //Stuff For the Footer
-        
         
         let tableViewFooter = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 110))
         tableViewFooter.layer.cornerRadius = 8.0
@@ -65,14 +65,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         
-        let totalDebt = UILabel(frame: CGRect(x: tableView.frame.width/7 , y: 10, width: tableView.frame.width*(1/2), height: 50))
+        let totalDebt = UILabel(frame: CGRect(x: self.view.center.x , y: 10, width: tableView.frame.width, height: 50))
         totalDebt.font = UIFont(name: "YEEZYTSTAR-Bold", size: 30)
         totalDebt.textColor = UIColor.white
         totalDebt.backgroundColor = UIColor.black
         tableViewFooter.addSubview(totalDebt)
         
         
-        let totalDebtDescription = UILabel(frame: CGRect(x: totalDebt.frame.origin.x , y: 0, width: tableView.frame.width*(1/3), height: 20))
+        let totalDebtDescription = UILabel(frame: CGRect(x: self.view.center.x , y: 0, width: tableView.frame.width, height: 20))
         totalDebtDescription.text = "Total Debts"
         totalDebtDescription.textColor = UIColor.white
         totalDebtDescription.font = UIFont(name: "YEEZYTSTAR-Bold", size: 10)
@@ -90,7 +90,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         netStanding.textAlignment = .center
         tableViewFooter.addSubview(netStanding)
         
-        let netStandingDescription = UILabel(frame: CGRect(x: 0 , y: 60, width: tableView.frame.width/10, height: 20))
+        let netStandingDescription = UILabel(frame: CGRect(x: 0 , y: 60, width: tableView.frame.width/12, height: 20))
         netStandingDescription.text = "Net Standing"
         netStandingDescription.textColor = UIColor.white
         netStandingDescription.backgroundColor = UIColor.darkGray
@@ -100,7 +100,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         
         tableView.tableFooterView  = tableViewFooter
-
+        
         
         let shareData = ShareData.sharedInstance
         shareData.friendIndex = -1
@@ -152,23 +152,24 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.tableView.delegate = self
         
-        //Search Bar
+        /*Search Bar
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+         */
     }
-    
+    /*
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         var friendsOnly = [String]()
         for i in 0..<friendsList.count {
-            friendsOnly.append(friendsList[i][0])
+            friendsOnly.append(friendsList[i][0].lowercased())
         }
         let predicate = NSPredicate(format: "SELF contains %@", searchText)
         filteredFriends = friendsOnly.filter { predicate.evaluate(with: $0)}
         tableView.reloadData()
     }
-
+    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -190,12 +191,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
         let customGreen = UIColor(red: 89/255, green: 205/255, blue: 144/255, alpha: 1)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! MainPrototypeCell
         
-        cell.contentView.backgroundColor = UIColor(red:0.5, green:0.00, blue:0.5, alpha:1.0)
-        
+        cell.contentView.backgroundColor = UIColor(red:0.51, green:0.30, blue:0.62, alpha:1.0)
+    
         let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 8, width: self.view.frame.size.width - 20, height: 70))
         
         whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
@@ -207,8 +209,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.contentView.addSubview(whiteRoundedView)
         cell.contentView.sendSubview(toBack: whiteRoundedView)
 
-        
-        
         if searchController.isActive && searchController.searchBar.text != "" {
             cell.friendName.text = filteredFriends[(indexPath as NSIndexPath).row]
         }
@@ -243,7 +243,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             friendsList.remove(at: (indexPath as NSIndexPath).row)
             UserDefaults.standard.set(friendsList, forKey: "Friends_With_Defecits_List")
             tableView.reloadData()
-            super.viewDidLoad()
+            viewDidLoad()
         }
     }
     
@@ -254,12 +254,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
 }
-
+/*
 extension MainViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
 }
+ */
+
 extension String {
     
     var length: Int {

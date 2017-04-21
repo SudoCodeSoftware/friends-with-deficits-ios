@@ -34,4 +34,5 @@ class ShareData {
     
     var friendIndex: Int!
     var editIndex: Int!
+    var calcSave: String!
 }
