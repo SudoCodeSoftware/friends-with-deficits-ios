@@ -35,4 +35,7 @@ class ShareData {
     var friendIndex: Int!
     var editIndex: Int!
     var calcSave: String!
+    var accessToken: String!
+    var username: String!
+    var friendsList = [Any]()
 }

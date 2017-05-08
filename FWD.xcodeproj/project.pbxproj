@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0523A1581EAA6176000F2835 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523A1571EAA6176000F2835 /* PopUpViewController.swift */; };
+		0535E8A41EAAE5850075AD70 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0535E8A31EAAE5850075AD70 /* LoginViewController.swift */; };
 		0544BF6B1C85AB000035C98E /* MainPrototypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544BF6A1C85AB000035C98E /* MainPrototypeCell.swift */; };
 		0544BF6D1C85B9130035C98E /* FriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544BF6C1C85B9130035C98E /* FriendDetailViewController.swift */; };
 		056FE0F71C897472000C391B /* AddButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 056FE0F31C897472000C391B /* AddButton.png */; };
 		056FE0F81C897472000C391B /* BackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 056FE0F41C897472000C391B /* BackButton.png */; };
 		056FE0F91C897472000C391B /* Banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 056FE0F51C897472000C391B /* Banner.png */; };
 		056FE0FA1C897472000C391B /* EditButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 056FE0F61C897472000C391B /* EditButton.png */; };
+		057FF20F1EC08B0E00BF378B /* Debt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FF20E1EC08B0E00BF378B /* Debt.swift */; };
+		057FF2111EC09D9600BF378B /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FF2101EC09D9600BF378B /* Friend.swift */; };
 		05BF29191C8570DA00B2CDAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF29181C8570DA00B2CDAC /* AppDelegate.swift */; };
 		05BF291B1C8570DA00B2CDAC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF291A1C8570DA00B2CDAC /* MainViewController.swift */; };
 		05BF291E1C8570DA00B2CDAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BF291C1C8570DA00B2CDAC /* Main.storyboard */; };
@@ -32,12 +35,15 @@
 /* Begin PBXFileReference section */
 		01CB3DB81AAE2E61D47FA1DE /* Pods_FWD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FWD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0523A1571EAA6176000F2835 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		0535E8A31EAAE5850075AD70 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0544BF6A1C85AB000035C98E /* MainPrototypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPrototypeCell.swift; sourceTree = "<group>"; };
 		0544BF6C1C85B9130035C98E /* FriendDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendDetailViewController.swift; sourceTree = "<group>"; };
 		056FE0F31C897472000C391B /* AddButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddButton.png; sourceTree = "<group>"; };
 		056FE0F41C897472000C391B /* BackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackButton.png; sourceTree = "<group>"; };
 		056FE0F51C897472000C391B /* Banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Banner.png; sourceTree = "<group>"; };
 		056FE0F61C897472000C391B /* EditButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EditButton.png; sourceTree = "<group>"; };
+		057FF20E1EC08B0E00BF378B /* Debt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debt.swift; sourceTree = "<group>"; };
+		057FF2101EC09D9600BF378B /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		05BF29151C8570DA00B2CDAC /* FWD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FWD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BF29181C8570DA00B2CDAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05BF291A1C8570DA00B2CDAC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -93,10 +99,13 @@
 			children = (
 				05BF29181C8570DA00B2CDAC /* AppDelegate.swift */,
 				05BF291A1C8570DA00B2CDAC /* MainViewController.swift */,
+				057FF20E1EC08B0E00BF378B /* Debt.swift */,
+				057FF2101EC09D9600BF378B /* Friend.swift */,
 				0544BF6C1C85B9130035C98E /* FriendDetailViewController.swift */,
 				05BF292A1C857C9400B2CDAC /* AddFriendViewController.swift */,
 				05EFFFDF1C88091600BB65CE /* AddDebtViewController.swift */,
 				0523A1571EAA6176000F2835 /* PopUpViewController.swift */,
+				0535E8A31EAAE5850075AD70 /* LoginViewController.swift */,
 				05BF291C1C8570DA00B2CDAC /* Main.storyboard */,
 				05BF29211C8570DA00B2CDAC /* LaunchScreen.storyboard */,
 				0544BF6A1C85AB000035C98E /* MainPrototypeCell.swift */,
@@ -265,12 +274,15 @@
 				0544BF6B1C85AB000035C98E /* MainPrototypeCell.swift in Sources */,
 				05BF292B1C857C9400B2CDAC /* AddFriendViewController.swift in Sources */,
 				05BF291B1C8570DA00B2CDAC /* MainViewController.swift in Sources */,
+				057FF2111EC09D9600BF378B /* Friend.swift in Sources */,
 				0544BF6D1C85B9130035C98E /* FriendDetailViewController.swift in Sources */,
 				05EFFFE01C88091600BB65CE /* AddDebtViewController.swift in Sources */,
 				05EFFFE41C880D9F00BB65CE /* DetailPrototypeCell.swift in Sources */,
 				05BF29191C8570DA00B2CDAC /* AppDelegate.swift in Sources */,
 				0523A1581EAA6176000F2835 /* PopUpViewController.swift in Sources */,
+				0535E8A41EAAE5850075AD70 /* LoginViewController.swift in Sources */,
 				05EFFFDE1C869A6000BB65CE /* ShareData.swift in Sources */,
+				057FF20F1EC08B0E00BF378B /* Debt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

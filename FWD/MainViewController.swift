@@ -9,8 +9,8 @@
 import UIKit
 import Alamofire
 
-
 var friendsList = [[String]]()
+var friendsListOnline = [Any]()
 var filteredFriends = [String]()
 
 
@@ -106,12 +106,61 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         shareData.friendIndex = -1
         shareData.editIndex = -1
         
-        //Check if a friends list has previously been saved
+        /*Check if a friends list has previously been saved
         if UserDefaults.standard.object(forKey: "Friends_With_Defecits_List") != nil {
             //Set the friends list to that which has been saved
             friendsList = UserDefaults.standard.object(forKey: "Friends_With_Defecits_List") as! [[String]]
             debugPrint(friendsList)
+        }*/
+ 
+        
+        let parameters: Parameters = [
+            "access_token" : shareData.accessToken,
+            "req_type": "getDebt"
+        ]
+        
+        var friendsListOnline = [Friend]()
+        
+        Alamofire.request("https://www.sudo-code.tk/cgi-bin/fwd/fwd.cgi", method: .post, parameters: parameters)
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    if let data = response.result.value as? [Any] {
+                        let statusCode = data[0] as! String
+                        let shareData = ShareData.sharedInstance
+                        switch statusCode {
+                        case "0":
+                            let friendData = data[1] as! [NSArray]
+                            for i in (0..<friendData.count) {
+                                let friend = friendData[i]
+                                let friendID = friend[0]
+                                let totalDebt = friend[2]
+                                var currDebts = [Debt]()
+                                var friendDebts = friend[1] as! NSArray
+                                for j in (0..<friendDebts.count) {
+                                    var currFriendDebt = friendDebts[j] as! [String:Any]
+                                    currDebts.append(Debt(debt: currFriendDebt["debt"] as! Float, debtorID: currFriendDebt["debtorID"] as! Int, debtedID: currFriendDebt["debtedID"] as! Int, description: currFriendDebt["description"] as! String, time: currFriendDebt["time"] as! String))
+                                }
+                                friendsListOnline.append(Friend(userID: Float(friendID as! Int), debts: currDebts as NSArray, totalDebt: totalDebt as! Float))
+                                
+                            }
+                            
+                        case "1":
+                            debugPrint("Access Token Error")
+                            self.performSegue(withIdentifier: "Logout", sender: self)
+                        default:
+                            print("1")
+                        }
+                    } else {
+                        print("2")
+                    }
+                    
+                case .failure( _):
+                    print("3")
+                }
         }
+        
         var totalDebtFloat: Float = 0
         var totalCreditFloat: Float = 0
         for i in (0..<friendsList.count) {
