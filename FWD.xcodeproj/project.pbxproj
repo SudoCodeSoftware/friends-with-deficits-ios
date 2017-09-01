@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0523A1581EAA6176000F2835 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0523A1571EAA6176000F2835 /* PopUpViewController.swift */; };
-		0535E8A41EAAE5850075AD70 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0535E8A31EAAE5850075AD70 /* LoginViewController.swift */; };
 		0544BF6B1C85AB000035C98E /* MainPrototypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544BF6A1C85AB000035C98E /* MainPrototypeCell.swift */; };
 		0544BF6D1C85B9130035C98E /* FriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544BF6C1C85B9130035C98E /* FriendDetailViewController.swift */; };
 		056FE0F71C897472000C391B /* AddButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 056FE0F31C897472000C391B /* AddButton.png */; };
@@ -27,15 +26,12 @@
 		05EFFFE01C88091600BB65CE /* AddDebtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EFFFDF1C88091600BB65CE /* AddDebtViewController.swift */; };
 		05EFFFE41C880D9F00BB65CE /* DetailPrototypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EFFFE31C880D9F00BB65CE /* DetailPrototypeCell.swift */; };
 		05EFFFE61C89642300BB65CE /* 4ByUK.png in Resources */ = {isa = PBXBuildFile; fileRef = 05EFFFE51C89642300BB65CE /* 4ByUK.png */; };
-		8C4591EA6362FB9F266CED8C /* Pods_FWD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CB3DB81AAE2E61D47FA1DE /* Pods_FWD.framework */; };
 		DD7CE1FD1C8D7376001A2051 /* yeezy_tstar-bold-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD7CE1FB1C8D7376001A2051 /* yeezy_tstar-bold-webfont.ttf */; };
 		DD7CE1FE1C8D7376001A2051 /* yeezy_tstar-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD7CE1FC1C8D7376001A2051 /* yeezy_tstar-regular-webfont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		01CB3DB81AAE2E61D47FA1DE /* Pods_FWD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FWD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0523A1571EAA6176000F2835 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
-		0535E8A31EAAE5850075AD70 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0544BF6A1C85AB000035C98E /* MainPrototypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPrototypeCell.swift; sourceTree = "<group>"; };
 		0544BF6C1C85B9130035C98E /* FriendDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendDetailViewController.swift; sourceTree = "<group>"; };
 		056FE0F31C897472000C391B /* AddButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddButton.png; sourceTree = "<group>"; };
@@ -56,8 +52,6 @@
 		05EFFFDF1C88091600BB65CE /* AddDebtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDebtViewController.swift; sourceTree = "<group>"; };
 		05EFFFE31C880D9F00BB65CE /* DetailPrototypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPrototypeCell.swift; sourceTree = "<group>"; };
 		05EFFFE51C89642300BB65CE /* 4ByUK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4ByUK.png; sourceTree = "<group>"; };
-		13BCB34118EDAE45F9790AE0 /* Pods-FWD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FWD.release.xcconfig"; path = "Pods/Target Support Files/Pods-FWD/Pods-FWD.release.xcconfig"; sourceTree = "<group>"; };
-		BFB4BC8DB5288F22B234B17E /* Pods-FWD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FWD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FWD/Pods-FWD.debug.xcconfig"; sourceTree = "<group>"; };
 		DD7CE1FB1C8D7376001A2051 /* yeezy_tstar-bold-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "yeezy_tstar-bold-webfont.ttf"; path = "FWD/yeezy_tstar-bold-webfont.ttf"; sourceTree = "<group>"; };
 		DD7CE1FC1C8D7376001A2051 /* yeezy_tstar-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "yeezy_tstar-regular-webfont.ttf"; path = "FWD/yeezy_tstar-regular-webfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C4591EA6362FB9F266CED8C /* Pods_FWD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +74,6 @@
 				DD7CE1FC1C8D7376001A2051 /* yeezy_tstar-regular-webfont.ttf */,
 				05BF29171C8570DA00B2CDAC /* FWD */,
 				05BF29161C8570DA00B2CDAC /* Products */,
-				583321F36C69FE42B7C5B522 /* Pods */,
 				C378951A83A934FF23023DC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -105,7 +97,6 @@
 				05BF292A1C857C9400B2CDAC /* AddFriendViewController.swift */,
 				05EFFFDF1C88091600BB65CE /* AddDebtViewController.swift */,
 				0523A1571EAA6176000F2835 /* PopUpViewController.swift */,
-				0535E8A31EAAE5850075AD70 /* LoginViewController.swift */,
 				05BF291C1C8570DA00B2CDAC /* Main.storyboard */,
 				05BF29211C8570DA00B2CDAC /* LaunchScreen.storyboard */,
 				0544BF6A1C85AB000035C98E /* MainPrototypeCell.swift */,
@@ -122,19 +113,9 @@
 			path = FWD;
 			sourceTree = "<group>";
 		};
-		583321F36C69FE42B7C5B522 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BFB4BC8DB5288F22B234B17E /* Pods-FWD.debug.xcconfig */,
-				13BCB34118EDAE45F9790AE0 /* Pods-FWD.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		C378951A83A934FF23023DC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				01CB3DB81AAE2E61D47FA1DE /* Pods_FWD.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,12 +127,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05BF29271C8570DA00B2CDAC /* Build configuration list for PBXNativeTarget "FWD" */;
 			buildPhases = (
-				DC7B2F0CFF181470098D42B8 /* [CP] Check Pods Manifest.lock */,
 				05BF29111C8570DA00B2CDAC /* Sources */,
 				05BF29121C8570DA00B2CDAC /* Frameworks */,
 				05BF29131C8570DA00B2CDAC /* Resources */,
-				F71EF90CF4B20EA3203EA204 /* [CP] Embed Pods Frameworks */,
-				2FC1BECC87F3CA415936BDA8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,54 +196,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2FC1BECC87F3CA415936BDA8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FWD/Pods-FWD-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DC7B2F0CFF181470098D42B8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F71EF90CF4B20EA3203EA204 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FWD/Pods-FWD-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		05BF29111C8570DA00B2CDAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -280,7 +210,6 @@
 				05EFFFE41C880D9F00BB65CE /* DetailPrototypeCell.swift in Sources */,
 				05BF29191C8570DA00B2CDAC /* AppDelegate.swift in Sources */,
 				0523A1581EAA6176000F2835 /* PopUpViewController.swift in Sources */,
-				0535E8A41EAAE5850075AD70 /* LoginViewController.swift in Sources */,
 				05EFFFDE1C869A6000BB65CE /* ShareData.swift in Sources */,
 				057FF20F1EC08B0E00BF378B /* Debt.swift in Sources */,
 			);
@@ -398,7 +327,6 @@
 		};
 		05BF29281C8570DA00B2CDAC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFB4BC8DB5288F22B234B17E /* Pods-FWD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -416,7 +344,6 @@
 		};
 		05BF29291C8570DA00B2CDAC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13BCB34118EDAE45F9790AE0 /* Pods-FWD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

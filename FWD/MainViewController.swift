@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 var friendsList = [[String]]()
 var friendsListOnline = [Any]()
@@ -111,7 +110,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             //Set the friends list to that which has been saved
             friendsList = UserDefaults.standard.object(forKey: "Friends_With_Defecits_List") as! [[String]]
             debugPrint(friendsList)
-        }*/
+        }
  
         
         let parameters: Parameters = [
@@ -160,6 +159,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                     print("3")
                 }
         }
+ 
+ */
         
         var totalDebtFloat: Float = 0
         var totalCreditFloat: Float = 0
